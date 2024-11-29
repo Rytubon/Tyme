@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.tyme"
+    namespace = "com.example.thong"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.tyme"
+        applicationId = "com.example.thong"
         minSdk = 24
         targetSdk = 35
         versionCode = 1
