@@ -50,7 +50,6 @@ class UserRepositoryImpl(
                 Result.Failure(Exception(response.message()))
             }
         } else {
-
             return Result.Success(users.first())
         }
     }

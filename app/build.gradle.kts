@@ -36,6 +36,10 @@ android {
         jvmTarget = "1.8"
     }
 
+    testOptions {
+        unitTests.isReturnDefaultValues = true
+    }
+
     viewBinding {
         enable = true
     }
@@ -52,6 +56,7 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     testImplementation(libs.junit)
+    testImplementation(libs.junit.jupiter)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
@@ -60,6 +65,7 @@ dependencies {
     val retrofitVersion = "2.11.0"
     val navVersion = "2.8.3"
     val roomVersion = "2.6.1"
+    val mockkVersion = "1.10.0"
     // ViewModel
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion")
     // LiveData
@@ -86,8 +92,17 @@ dependencies {
     implementation("de.hdodenhof:circleimageview:3.1.0")
 
     //Testing
-    testImplementation("org.mockito:mockito-core:2.11.0")
     testImplementation("android.arch.core:core-testing:1.1.1")
     testImplementation("com.google.truth:truth:1.1")
+
+    //testImplementation("io.mockk:mockk:$mockkVersion")
+    val version = "4.4.0"
+    testImplementation("org.mockito:mockito-core:${version}")
+    androidTestImplementation("org.mockito:mockito-android:${version}")
+    testImplementation("androidx.arch.core:core-testing:2.1.0")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.3.4")
+    testImplementation("io.mockk:mockk:1.13.4")
+
+
 
 }
